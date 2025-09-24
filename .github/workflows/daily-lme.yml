@@ -29,6 +29,3 @@ jobs:
       - name: Run script
         run: |
           python Scraper.py
-
-      - name: Run scraper
-        run: python Scraper.py
