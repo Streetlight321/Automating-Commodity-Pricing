@@ -80,36 +80,40 @@ def get_copper_prices(url="https://comexlive.org/copper/"):
     finally:
         driver.quit()
 
-print('Aluminum')
-aluminum_high, aluminum_low = LME_commodities(commodity_Sites['Aluminum'])
-print('Zinc')
-zinc_high, zinc_low = LME_commodities(commodity_Sites['Zinc'])
-print('Copper')
-copper_high, copper_low = LME_commodities(commodity_Sites['Copper'])
-print('COMEX Copper')
-comex_high, comex_low, comex_open = get_copper_prices()
+def main():
+  print('Aluminum')
+  aluminum_high, aluminum_low = LME_commodities(commodity_Sites['Aluminum'])
+  print('Zinc')
+  zinc_high, zinc_low = LME_commodities(commodity_Sites['Zinc'])
+  print('Copper')
+  copper_high, copper_low = LME_commodities(commodity_Sites['Copper'])
+  print('COMEX Copper')
+  comex_high, comex_low, comex_open = get_copper_prices()
+  
+  
+  
+  from datetime import date, timedelta
+  
+  yesterday = date.today() - timedelta(days=1)
+  yesterday_str = yesterday.strftime("%Y-%m-%d")
+  
+  print(f"Today's date is {yesterday_str}")
+  
+  from SupaUpload import supa_upload
+  
+  print(f"Uploading to 'lme_copper'")
+  supa_upload(date=yesterday_str, low = copper_low, high=copper_high, last = (copper_high+copper_low)/2, table_name='lme_copper')
+  
+  print(f"Uploading to 'lme_aluminum'")
+  supa_upload(date=yesterday_str, low = aluminum_low, high=aluminum_high, last = (aluminum_high+aluminum_low)/2, table_name='lme_aluminum')
+  
+  print(f"Uploading to 'lme_zinc'")
+  supa_upload(date=yesterday_str, low = zinc_low, high=zinc_high, last = (zinc_high+zinc_low)/2, table_name='lme_zinc')
+  
+  today_str = date.today().strftime("%Y-%m-%d")
+  
+  print(f"Uploading to 'comex_copper'")
+  supa_upload(date=today_str, low = comex_low, high=comex_high, last = comex_open, table_name='comex_copper')
+if __name__ == "__main__":
+    main()
 
-
-
-from datetime import date, timedelta
-
-yesterday = date.today() - timedelta(days=1)
-yesterday_str = yesterday.strftime("%Y-%m-%d")
-
-print(f"Today's date is {yesterday_str}")
-
-from SupaUpload import supa_upload
-
-print(f"Uploading to 'lme_copper'")
-supa_upload(date=yesterday_str, low = copper_low, high=copper_high, last = (copper_high+copper_low)/2, table_name='lme_copper')
-
-print(f"Uploading to 'lme_aluminum'")
-supa_upload(date=yesterday_str, low = aluminum_low, high=aluminum_high, last = (aluminum_high+aluminum_low)/2, table_name='lme_aluminum')
-
-print(f"Uploading to 'lme_zinc'")
-supa_upload(date=yesterday_str, low = zinc_low, high=zinc_high, last = (zinc_high+zinc_low)/2, table_name='lme_zinc')
-
-today_str = date.today().strftime("%Y-%m-%d")
-
-print(f"Uploading to 'comex_copper'")
-supa_upload(date=today_str, low = comex_low, high=comex_high, last = comex_open, table_name='comex_copper')
