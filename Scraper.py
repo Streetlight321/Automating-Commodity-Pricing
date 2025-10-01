@@ -102,10 +102,10 @@ def main():
   from SupaUpload import supa_upload
   
   print(f"Uploading to 'lme_copper'")
-  supa_upload(date=yesterday_str, low = copper_low, high=copper_high, last = (copper_high+copper_low)/2, table_name='lme_copper')
+  supa_upload(date=yesterday_str, low = copper_low, high=copper_high, last = (copper_high+copper_low)/2, table_name='price_facts')
   
   print(f"Uploading to 'lme_aluminum'")
-  supa_upload(date=yesterday_str, low = aluminum_low, high=aluminum_high, last = (aluminum_high+aluminum_low)/2, table_name='lme_aluminum')
+  supa_upload(date=yesterday_str, low = aluminum_low, high=aluminum_high, last = (aluminum_high+aluminum_low)/2, table_name='price_facts')
   
   print(f"Uploading to 'lme_zinc'")
   supa_upload(date=yesterday_str, low = zinc_low, high=zinc_high, last = (zinc_high+zinc_low)/2, table_name='lme_zinc')
