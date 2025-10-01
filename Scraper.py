@@ -102,18 +102,18 @@ def main():
   from SupaUpload import supa_upload
   
   print(f"Uploading to 'lme_copper'")
-  supa_upload(date=yesterday_str, low = copper_low, high=copper_high, last = (copper_high+copper_low)/2, table_name='price_facts')
+  supa_upload(date=yesterday_str, low = copper_low, high=copper_high, last = (copper_high+copper_low)/2, table_name='price_facts', commodity_name='LME Copper')
   
   print(f"Uploading to 'lme_aluminum'")
-  supa_upload(date=yesterday_str, low = aluminum_low, high=aluminum_high, last = (aluminum_high+aluminum_low)/2, table_name='price_facts')
+  supa_upload(date=yesterday_str, low = aluminum_low, high=aluminum_high, last = (aluminum_high+aluminum_low)/2, table_name='price_facts', commodity_name='LME Aluminum')
   
   print(f"Uploading to 'lme_zinc'")
-  supa_upload(date=yesterday_str, low = zinc_low, high=zinc_high, last = (zinc_high+zinc_low)/2, table_name='lme_zinc')
+  supa_upload(date=yesterday_str, low = zinc_low, high=zinc_high, last = (zinc_high+zinc_low)/2, table_name='price_facts', commodity_name='LME Zinc')
   
   today_str = date.today().strftime("%Y-%m-%d")
   
   print(f"Uploading to 'comex_copper'")
-  supa_upload(date=today_str, low = comex_low, high=comex_high, last = comex_open, table_name='comex_copper')
+  supa_upload(date=today_str, low = comex_low, high=comex_high, last = comex_open, table_name='price_facts', commodity_name='COMEX Copper')
 if __name__ == "__main__":
     main()
 
