@@ -1,4 +1,4 @@
-def supa_upload(date, low, high, last, table_name):
+def supa_upload(date, low, high, last, table_name, commodity_name):
     import supabase as sb
     import pandas as pd
     import dotenv
@@ -12,7 +12,8 @@ def supa_upload(date, low, high, last, table_name):
         'date' : date,
         'low' : low,
         'high' : high,
-        'last' : last
+        'last' : last,
+        'commodity_name' : commodity_name
     }
     response = supabase.table(table_name).insert(data).execute()
     print(f"Uploaded! response: {response}")
