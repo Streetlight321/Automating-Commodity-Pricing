@@ -13,7 +13,8 @@ def supa_upload(date, low, high, last, table_name, commodity_name):
         'low' : low,
         'high' : high,
         'last' : last,
-        'commodity_name' : commodity_name
+        'commodity' : commodity_name
     }
     response = supabase.table(table_name).insert(data).execute()
     print(f"Uploaded! response: {response}")
+
