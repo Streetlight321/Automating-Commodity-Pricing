@@ -1,6 +1,7 @@
 # Automating Commodity Pricing (copy of "Automating Commodity Guidance")
 
-[Dashboard Link](https://amatarasu1122--usage-dashboard-run.modal.run/)
+<center>##[Dashboard Link Here!](https://amatarasu1122--usage-dashboard-run.modal.run/)</center>
+
 <img width="1750" height="607" alt="Screenshot 2025-10-07 141139" src="https://github.com/user-attachments/assets/75f55da1-9fa0-48e1-b86e-bdd1b671e692" />
 
 This repository scrapes commodity pricing (LME and COMEX) and uploads daily price facts to a Supabase table. It's a copy of a project called "Automating Commodity Guidance" and was inspired by a project done at ABB.
