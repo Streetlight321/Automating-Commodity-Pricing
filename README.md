@@ -1,6 +1,6 @@
 # Automating Commodity Pricing (copy of "Automating Commodity Guidance")
 
-<center>## [Dashboard Link Here!](https://amatarasu1122--usage-dashboard-run.modal.run/)</center>
+<center>## [Dashboard Link Here!](https://amatarasu1122--usage-dashboard-run.modal.run/) </center>
 
 <img width="1750" height="607" alt="Screenshot 2025-10-07 141139" src="https://github.com/user-attachments/assets/75f55da1-9fa0-48e1-b86e-bdd1b671e692" />
 
