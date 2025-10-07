@@ -1,10 +1,13 @@
 # Automating Commodity Pricing (copy of "Automating Commodity Guidance")
 
+<img width="1750" height="607" alt="Screenshot 2025-10-07 141139" src="https://github.com/user-attachments/assets/75f55da1-9fa0-48e1-b86e-bdd1b671e692" />
+
 This repository scrapes commodity pricing (LME and COMEX) and uploads daily price facts to a Supabase table. It's a copy of a project called "Automating Commodity Guidance" and was inspired by a project done at ABB.
 
 ## Contents
 - `Scraper.py` — main scraping logic using Selenium (Firefox/geckodriver) + BeautifulSoup.
-- `SupaUpload.py` — helper that inserts scraped records into a Supabase table using environment variables for credentials.
+- `<img width="1750" height="607" alt="image" src="https://github.com/user-attachments/assets/3868be28-f432-460d-915e-e265c7f26a20" /><img width="1750" height="607" alt="image" src="https://github.com/user-attachments/assets/a2c2cb9d-09d5-4dbb-b17f-89b078e74f6d" />
+` — helper that inserts scraped records into a Supabase table using environment variables for credentials.
 - `.github/workflows/daily-lme.yml` — GitHub Actions workflow that can run the scraper on a schedule or manually.
 
 ## Quick overview
