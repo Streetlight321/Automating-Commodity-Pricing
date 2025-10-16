@@ -29,3 +29,6 @@ jobs:
       - name: Run script
         run: |
           python Scraper.py
+      - name: Pull From SupaBase
+        run: |
+          python Supa2CSV.py
